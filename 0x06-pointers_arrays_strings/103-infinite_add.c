@@ -1,19 +1,47 @@
-File 0-strcat.c is a function that concatenates two strings.
+#include "main.h"
 
-File 1-strncat.c is a function that concatenates two strings that will use at most n bytes from src.
+/**
+ * infinite_add - adds two numbers
+ * @n1: first number
+ * @n2: second number
+ * @r: buffer for result
+ * @size_r: buffer size
+ *
+ * Return: address of r or 0
+ */
+char *infinite_add(char *n1, char *n2, char *r, int size_r)
+{
+	int i, j, k, l, m, n;
 
-File 2-strncpy.c is a function that copies a string.
-
-File 3-strcmp.c is a function that compares two strings.
-
-File 4-rev_array.c a function that reverses the content of an array of integers.
-
-File 5-string_toupper.c is a function that changes all lowercase letters of a string to uppercase.
-
-File 6-cap_string.c is a function that capitalizes all words of a string.
-
-File 7-leet.c is a function that encodes a string into 1337.
-
-File 100-rot13.c is a function that encodes a string using rot13.
-
-File _putchar.c is a function that replaces the standard library function pu
+	for (i = 0; n1[i]; i++)
+		;
+	for (j = 0; n2[j]; j++)
+		;
+	if (i > size_r || j > size_r)
+		return (0);
+	m = 0;
+	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
+	{
+		n = m;
+		if (i >= 0)
+			n += n1[i] - '0';
+		if (j >= 0)
+			n += n2[j] - '0';
+		if (i < 0 && j < 0 && n == 0)
+		{
+			break;
+		}
+		m = n / 10;
+		r[k] = n % 10 + '0';
+	}
+	r[k] = '\0';
+	if (i >= 0 || j >= 0 || m)
+		return (0);
+	for (k -= 1, l = 0; l < k; k--, l++)
+	{
+		m = r[k];
+		r[k] = r[l];
+		r[l] = m;
+	}
+	return (r);
+}
