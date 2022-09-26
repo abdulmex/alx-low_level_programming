@@ -1,8 +1,3 @@
-/*                                                                                                                                   
- * File: 0-memset.c                                                                                                                  
- * Auth: not                                                                                                                         
- */                                                                                                                                  
-                                                                                                                                     
 #include "main.h"                                                                                                                    
                                                                                                                                      
 /**                                                                                                                                  
@@ -26,3 +21,4 @@ void *_memset(void *s, int c, size_t n)
                                                                                                                                      
         return (memory);                                                                                                             
 }
+

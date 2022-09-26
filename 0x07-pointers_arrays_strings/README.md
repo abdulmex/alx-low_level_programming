@@ -1,1 +1,1 @@
-Write a description of all the task here the way which help you understand everything
+0x07. C - Even more pointers, arrays and strings
